@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <div class="table-responsive">
-        <table v-if="rows.length" class="table table-striped table-bordered table-hover">
+        <table  class="table table-striped table-bordered table-hover">
           <thead>
             <th v-for="column in columns" v-bind:key="column._id">{{column}}</th>
           </thead>
@@ -13,6 +13,7 @@
             </tr>
           </tbody>
         </table>
+        <h1 v-if="!rows.length">No Data</h1>
       </div>
     </div>
     <Footer v-on:back-clicked="onBackClicked" v-on:next-clicked="onNextClicked" />
