@@ -40,7 +40,7 @@ export default {
           this.columns = [];
         console.log("refreshing data---",this.page);
       axios
-        .get("http://localhost:5500/entities/getData/15/" + this.page)
+        .get("http://193.46.198.162:5700/entities/getData/15/" + this.page)
         .then(res => {
           console.log(res.data);
          this.columns = Object.keys(res.data[0]).filter(x => x != "_id");
@@ -61,7 +61,7 @@ export default {
      
     });
     axios
-      .get("http://localhost:5500/entities/getData/15/1")
+      .get("http://193.46.198.162:5700/entities/getData/15/1")
       .then(res => {
         console.log(res.data);
         if (res.data.length) {

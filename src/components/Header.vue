@@ -36,7 +36,7 @@ export default {
       formData.append("datafile", this.FILE, this.FILE.name);
       formData.append("entity", "stocktake");
       axios
-        .post("http://localhost:5500/files/sendFile", formData, {})
+        .post("http://193.46.198.162:5700/files/sendFile", formData, {})
         .then(res => {
           console.log(res);
           this.errors = res.data;
@@ -48,7 +48,7 @@ export default {
     },
     getFile(bookType) {
       axios
-        .get("http://localhost:5500/files/getFile", {
+        .get("http://193.46.198.162:5700/files/getFile", {
           bookType,
           file_name: "test"
         })
@@ -61,7 +61,7 @@ export default {
     },
      getTemplate() {
       axios
-        .get("http://localhost:5500/files/getTemplate")
+        .get("http://193.46.198.162:5700/files/getTemplate")
         .then(res => {
           const fileName = "stocktake_template";
           const exportType = "csv";
@@ -71,7 +71,7 @@ export default {
     },
     clear() {
       axios
-        .post("http://localhost:5500/entities/clear", { entity: "stocktake" })
+        .post("http://193.46.198.162:5700/entities/clear", { entity: "stocktake" })
         .then(res => {
           console.log(res);
           this.$root.$emit("refreshData");
